@@ -1,0 +1,32 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Zip Code</th>
+                        <th>IP Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let location of locations'>
+                        <td>{{location.date}}</td>
+                        <td>{{location.country_name}}</td>
+                        <td>{{location.region_name}}</td>
+                        <td>{{location.city}}</td>
+                        <td>{{location.zip_code}}</td>
+                        <td>{{location.ip}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var UsageComponent = (function () {
+    function UsageComponent() {
+        this.pageTitle = 'App Usage By Date';
+        this.locations = [{ "date": new Date(), "ip": "4.34.192.138", "country_name": "United States", "region_name": "Pennsylvania", "city": "Philadelphia", "zip_code": "19147" }];
     }
-    AppComponent = __decorate([
+    UsageComponent = __decorate([
         core_1.Component({
-            selector: 'challenge1-app',
-            templateUrl: '../app/app.component.html'
+            templateUrl: './app/usage/usage.component.html',
+            styleUrls: ['./app/usage/usage.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], UsageComponent);
+    return UsageComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.UsageComponent = UsageComponent;
+//# sourceMappingURL=usage.component.js.map

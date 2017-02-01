@@ -13,11 +13,11 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
+// import { LocalStorageService } from 'angular-2-local-storage';
 // Declarations
 var app_component_1 = require('./app.component');
 var home_component_1 = require('./home/home.component');
 var usage_component_1 = require('./usage/usage.component');
-var ip_service_1 = require('./ip.service');
 var app_routes_1 = require('./app.routes');
 // Decorator
 var AppModule = (function () {
@@ -37,9 +37,7 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 usage_component_1.UsageComponent
             ],
-            providers: [
-                ip_service_1.IPService
-            ],
+            providers: [],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

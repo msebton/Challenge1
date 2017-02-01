@@ -13,6 +13,8 @@ var HomeComponent = (function () {
     function HomeComponent() {
         this.pageTitle = 'Home';
     }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
     HomeComponent = __decorate([
         core_1.Component({
             templateUrl: './app/home/home.component.html'

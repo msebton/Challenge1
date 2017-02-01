@@ -9,17 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var app_component_1 = require('../app.component');
 var UsageComponent = (function () {
-    function UsageComponent() {
+    function UsageComponent(app) {
         this.pageTitle = 'App Usage By Date';
-        this.locations = [{ "date": new Date(), "ip": "4.34.192.138", "country_name": "United States", "region_name": "Pennsylvania", "city": "Philadelphia", "zip_code": "19147" }];
+        this.usageLog = app.usageLog;
     }
+    UsageComponent.prototype.ngOnInit = function () {
+        console.log('count = ' + this.usageLog.length);
+    };
     UsageComponent = __decorate([
         core_1.Component({
             templateUrl: './app/usage/usage.component.html',
             styleUrls: ['./app/usage/usage.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [app_component_1.AppComponent])
     ], UsageComponent);
     return UsageComponent;
 }());

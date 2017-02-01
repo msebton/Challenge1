@@ -1,6 +1,6 @@
-<div>
+<div class="row">
     <!-- Navigation with router directives-->
-    <nav class='navbar navbar-default'>
+    <nav class='col-sm-12 navbar navbar-default'>
         <div class='container-fluid'>
             <a class='navbar-brand'>{{pageTitle}}</a>
             <ul class='nav navbar-nav'>
@@ -9,9 +9,11 @@
             </ul>
         </div>
     </nav>
-    
+</div>
+
+<div class="row">
     <!-- Router Outlet -->
-    <div class='container'>
+    <div class='col-sm-12 container'>
         <router-outlet></router-outlet>
     </div>
 </div>

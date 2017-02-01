@@ -11,7 +11,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.usageKey = 'usage-key';
+        this.usageLog = new Array();
     }
+    AppComponent.prototype.ngOnInit = function () {
+        // store the dates this app has been started, in local storage
+        if (this.localStorageAvailable()) {
+            if (!sessionStorage.getItem(this.usageKey)) {
+                sessionStorage.setItem(this.usageKey, 'true');
+                if (localStorage.getItem(this.usageKey)) {
+                    try {
+                        this.usageLog = JSON.parse(localStorage.getItem(this.usageKey));
+                        this.usageLog.push(new Date());
+                    }
+                    catch (e) {
+                        localStorage.clear();
+                    }
+                    localStorage.setItem(this.usageKey, JSON.stringify(this.usageLog));
+                }
+                else {
+                    this.usageLog.push(new Date());
+                    localStorage.setItem(this.usageKey, JSON.stringify(this.usageLog));
+                }
+            }
+            else {
+                this.usageLog = JSON.parse(localStorage.getItem(this.usageKey));
+            }
+        }
+        console.log('sessions = ' + this.usageLog.length);
+    };
+    AppComponent.prototype.localStorageAvailable = function () {
+        try {
+            var storage = window.localStorage, x = '__storage_test__';
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'challenge1-app',
